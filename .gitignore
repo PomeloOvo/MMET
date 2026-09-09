@@ -1,0 +1,15 @@
+# Local reference script; its metric logic is integrated into the trainer.
+/scatter.py
+
+# Python-generated files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local environments and editor settings
+.venv/
+.idea/
+.vscode/
+
+# Generated experiment outputs
+/results/
