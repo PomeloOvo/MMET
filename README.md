@@ -1,6 +1,6 @@
-# MetaPatchET
+# Pre-release Version of MMET
 
-Code for training and evaluating MetaPatchET on the minor and major datasets.
+Code for training and evaluating MMET on the minor and major datasets.
 
 ## Training
 
