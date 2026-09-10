@@ -1,4 +1,4 @@
-"""Unified deterministic training and evaluation entry point for MetaPatchET."""
+"""Unified deterministic training and evaluation entry point for MMET."""
 
 import argparse
 import os
@@ -933,7 +933,7 @@ def main(config):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        description="Train MetaPatchET from a YAML experiment config."
+        description="Train MMET from a YAML experiment config."
     )
     parser.add_argument('--config', required=True, help='Path to major.yaml or minor.yaml')
     args = parser.parse_args()
