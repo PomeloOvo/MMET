@@ -1,9 +1,19 @@
-"""Loss functions used by MetaPatchET training."""
+"""Loss functions used by MMET training."""
 
 import numpy as np
 import torch
 import torch.nn as nn
 from scipy.stats import gaussian_kde
+
+
+class RMSELoss:
+    """Root mean squared error loss."""
+
+    def __init__(self):
+        self.mse = nn.MSELoss()
+
+    def __call__(self, pred, target):
+        return torch.sqrt(self.mse(pred, target))
 
 
 class DensityWeightedMSE(nn.Module):

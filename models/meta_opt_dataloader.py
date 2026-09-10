@@ -1,4 +1,4 @@
-"""Deterministic episodic datasets and collation for MetaPatchET."""
+"""Deterministic episodic datasets and collation for MMET."""
 
 import hashlib
 import random

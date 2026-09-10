@@ -38,7 +38,7 @@ class SequenceMambaBackbone(nn.Module):
         return x.transpose(1, 2)
 
 
-class SimpleMLSTMCell(nn.Module):
+class Simple_mLSTM_Cell(nn.Module):
     """Minimal matrix-memory LSTM cell compatible with higher-order gradients."""
 
     def __init__(self, d_model):
@@ -76,13 +76,13 @@ class SimpleMLSTMCell(nn.Module):
         return self.layer_norm(self.out_proj(h_out))
 
 
-class BiMLSTMBlock(nn.Module):
+class Bi_mLSTM_Block(nn.Module):
     """Bidirectional matrix-memory LSTM block."""
 
     def __init__(self, d_model):
         super().__init__()
-        self.forward_cell = SimpleMLSTMCell(d_model)
-        self.backward_cell = SimpleMLSTMCell(d_model)
+        self.forward_cell = Simple_mLSTM_Cell(d_model)
+        self.backward_cell = Simple_mLSTM_Cell(d_model)
         self.merge = nn.Linear(d_model * 2, d_model)
 
     def forward(self, x):
@@ -100,7 +100,7 @@ class InterPatchMultiViewFusion(nn.Module):
         print(f"Initializing inter-patch fusion (mLSTM + Transformer, dim={embed_dim})")
 
         self.xlstm_branch = nn.ModuleList([
-            BiMLSTMBlock(d_model=embed_dim)
+            Bi_mLSTM_Block(d_model=embed_dim)
             for _ in range(xlstm_layers)
         ])
 
