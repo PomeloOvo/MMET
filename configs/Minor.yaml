@@ -1,0 +1,75 @@
+# MMET minor-dataset experiment
+model_name: MMET-minor
+csv_path: Datasets/Minor/clustered_data.csv
+output_dir: results/minor
+weights_dir: results/minor
+best_model_name: best_model_minor.pth
+best_checkpoint_strict: false
+
+device: auto
+strict_determinism: true
+train_seed: 42
+split_seed: 42
+val_seed: 42
+test_seed: 40731
+
+k_shot: 8
+q_query: 10
+inner_lr: 0.001
+meta_lr: 0.00005
+adaptation_steps: 5
+val_adaptation_steps: 12
+test_adaptation_steps: 5
+second_order: false
+
+epochs: 60
+meta_batch_size: 4
+test_meta_batch_size: 2
+gradient_accumulation_steps: 4
+max_grad_norm: 0.3
+train_sample_n: 400
+val_sample_n: 100
+test_sample_n: 100
+validation_interval: 3
+reshuffle_interval: 6
+early_stopping_patience: 5
+
+train_num_workers: 0
+eval_num_workers: 0
+test_num_workers: 0
+
+initialization:
+  mode: load
+  checkpoint: Weights/init_weight.pth
+  strict: false
+  overwrite: false
+
+model_config:
+  pretrain_model: facebook/esm2_t30_150M_UR50D
+  esm_dim: 640
+  context_window: 1024
+  max_seq_len: 1024
+  patch_len: 16
+  target_window: 128
+  n_mamba_layers: 3
+  mamba_d_state: 16
+  mamba_d_conv: 4
+  mamba_expand: 2
+  inter_xlstm_layers: 2
+  inter_tf_heads: 4
+  n_patch_inter_heads: 8
+  patch_inter_kernel: 3
+
+embedding:
+  batch_size: 256
+  max_length: 1024
+
+clustering:
+  n_clusters: 280
+  min_similarity: 0.9
+  max_similarity: 0.995
+  min_samples: 15
+  batch_size: 10000
+  random_state: 42
+  n_init: 3
+  max_no_improvement: 20

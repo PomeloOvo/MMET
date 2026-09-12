@@ -1,0 +1,35 @@
+training_config: Configs/Minor.yaml
+checkpoint_path: Weights/best_model_minor.pth
+input_csv: Datasets/Minor/test.csv
+prepared_csv: results/fine_tuning/prepared_minor.csv
+predictions_csv: results/fine_tuning/predictions_minor.csv
+metrics_csv: results/fine_tuning/metrics_minor.csv
+
+device: auto
+split_seed: 42
+support_fraction: 0.05
+label_mean: 38.7643
+label_std: 15.8334
+feature_batch_size: 16
+
+high_temperature: 60.0
+middle_temperature_min: 25.0
+middle_temperature_max: 65.0
+few_support_max: 2
+high_steps_few: 4
+high_steps_many: 8
+high_lr_few: 0.003
+high_lr_many: 0.004
+low_steps: 3
+low_lr: 0.002
+high_gradient_clip: 2.0
+low_gradient_clip: 1.0
+high_sample_weight: 3.0
+weight_regularization: 1.2
+bias_regularization: 0.2
+low_regularization: 0.5
+
+case_study_input_csv: Datasets/Minor/case_study.csv
+case_study_output_csv: results/case_study/predictions.csv
+case_study_adaptation_steps: 5
+case_study_fallback_inner_lr: 0.01
