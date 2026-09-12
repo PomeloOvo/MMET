@@ -17,9 +17,9 @@ from torch.func import functional_call
 from torch.utils.data import DataLoader, Subset
 from tqdm import tqdm
 
-from models.meta_patchet import MetaPatchET
-from models.meta_opt_dataloader import EnzymeMetaDataset, MetaCollate
-from models.loss_func import DensityWeightedMSE
+from Models.meta_patchet import MetaPatchET
+from Models.meta_opt_dataloader import EnzymeMetaDataset, MetaCollate
+from Models.loss_func import DensityWeightedMSE
 from utils import load_config, save_config
 
 
@@ -656,9 +656,10 @@ def main(config):
 
     print("Exporting train, validation, and test CSV files")
 
-    train_csv_path = os.path.join(config['output_dir'], "train.csv")
-    val_csv_path = os.path.join(config['output_dir'], "val.csv")
-    test_csv_path = os.path.join(config['output_dir'], "test.csv")
+    split_dir = os.path.dirname(config['csv_path'])
+    train_csv_path = os.path.join(split_dir, "train.csv")
+    val_csv_path = os.path.join(split_dir, "val.csv")
+    test_csv_path = os.path.join(split_dir, "test.csv")
     temp_df[temp_df[c_col].isin(train_ids)].to_csv(train_csv_path, index=False)
     temp_df[temp_df[c_col].isin(val_ids)].to_csv(val_csv_path, index=False)
     temp_df[temp_df[c_col].isin(test_ids)].to_csv(test_csv_path, index=False)
@@ -935,6 +936,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         description="Train MMET from a YAML experiment config."
     )
-    parser.add_argument('--config', required=True, help='Path to major.yaml or minor.yaml')
+    parser.add_argument('--config', required=True, help='Path to Major.yaml or Minor.yaml')
     args = parser.parse_args()
     main(prepare_config(args.config))
