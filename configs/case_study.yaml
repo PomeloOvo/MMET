@@ -1,0 +1,10 @@
+training_config: configs/minor.yaml
+checkpoint_path: weights/best_model_minor.pth
+case_study_input_csv: datasets/minor/case_study.csv
+case_study_output_csv: results/case_study/predictions.csv
+
+device: auto
+label_mean: 38.7643
+label_std: 15.8334
+case_study_adaptation_steps: 5
+case_study_fallback_inner_lr: 0.01
