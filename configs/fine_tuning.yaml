@@ -1,6 +1,6 @@
 training_config: configs/minor.yaml
 checkpoint_path: weights/best_model_minor.pth
-input_csv: datasets/minor/test.csv
+input_csv: datasets/dataset1/test.csv
 prepared_csv: results/fine_tuning/prepared_minor.csv
 predictions_csv: results/fine_tuning/predictions_minor.csv
 metrics_csv: results/fine_tuning/metrics_minor.csv

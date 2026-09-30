@@ -1,9 +1,9 @@
 # MMET major-dataset experiment
 mode: test
 model_name: MMET-major
-train_csv_path: datasets/major/train.csv
-val_csv_path: datasets/major/val.csv
-test_csv_path: datasets/major/test.csv
+train_csv_path: datasets/dataset2/train.csv
+val_csv_path: datasets/dataset2/val.csv
+test_csv_path: datasets/dataset2/test.csv
 checkpoint_path: weights/best_model_major.pth
 output_dir: results/major
 weights_dir: results/major

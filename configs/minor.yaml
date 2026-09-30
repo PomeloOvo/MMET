@@ -1,9 +1,9 @@
 # MMET minor-dataset experiment
 mode: test
 model_name: MMET-minor
-train_csv_path: datasets/minor/train.csv
-val_csv_path: datasets/minor/val.csv
-test_csv_path: datasets/minor/test.csv
+train_csv_path: datasets/dataset1/train.csv
+val_csv_path: datasets/dataset1/val.csv
+test_csv_path: datasets/dataset1/test.csv
 checkpoint_path: weights/best_model_minor.pth
 output_dir: results/minor
 weights_dir: results/minor

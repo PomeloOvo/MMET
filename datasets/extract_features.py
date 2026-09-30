@@ -13,7 +13,8 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 def dataset_directory(dataset):
-    return os.path.join(PROJECT_ROOT, "datasets", dataset)
+    directory_name = {"minor": "dataset1", "major": "dataset2"}[dataset]
+    return os.path.join(PROJECT_ROOT, "datasets", directory_name)
 
 
 def load_dataset_config(dataset):

@@ -2,6 +2,10 @@
 
 > Pre-release research code for enzyme optimal temperature prediction.
 
+## Model Architecture
+
+![MMET model architecture](MMET_architecture.png)
+
 MMET is a sequence-only framework that combines meta-learning with patch-based, multi-view representation learning. It is designed to improve enzyme optimal temperature prediction under limited and imbalanced supervision, particularly for sparsely represented temperature ranges.
 
 ## Method Overview
@@ -29,6 +33,8 @@ export HF_ENDPOINT=https://hf-mirror.com
 ## Training and Evaluation
 
 Run the following commands from the project root. The experiment configuration is selected with `--config`. The provided configurations use `test` mode by default and load the checkpoint specified by `checkpoint_path`.
+
+Dataset 1 (minor) is in `datasets/dataset1/`, and Dataset 2 (major) is in `datasets/dataset2/`. The configuration names remain `minor.yaml` and `major.yaml`.
 
 Evaluate the released checkpoints:
 

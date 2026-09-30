@@ -1,6 +1,6 @@
 training_config: configs/minor.yaml
 checkpoint_path: weights/best_model_minor.pth
-case_study_input_csv: datasets/minor/case_study.csv
+case_study_input_csv: datasets/dataset1/case_study.csv
 case_study_output_csv: results/case_study/predictions.csv
 
 device: auto

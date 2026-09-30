@@ -1,9 +1,9 @@
 # MMET minor-dataset ablation evaluation
 mode: test
 model_name: MMET-ablation
-train_csv_path: datasets/minor/train.csv
-val_csv_path: datasets/minor/val.csv
-test_csv_path: datasets/minor/test.csv
+train_csv_path: datasets/dataset1/train.csv
+val_csv_path: datasets/dataset1/val.csv
+test_csv_path: datasets/dataset1/test.csv
 checkpoint_path: weights/best_weight_ablation.pth
 output_dir: results/ablation
 weights_dir: results/ablation
